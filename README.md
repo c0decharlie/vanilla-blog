@@ -1,0 +1,1 @@
+Simple Blog system written in Vanilla JS. 

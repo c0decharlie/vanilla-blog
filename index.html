@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700" rel="stylesheet">
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>VanillaBlog</title>
+</head>
+  <button id="clearBlog" class="btn btn-danger">Clear blog</button>
+<body>
+  <div class="row">
+    <div class="container">
+      <div class="col-md-8 col-md-push-2 col-lg-8 col-lg-push-2 blog-wrapper">
+        <div class='create-post'>
+          <h1>VanillaBlog.JS</h1>
+          <hr>
+          <form id="post-form">
+            <label for="title">Post title:</label>
+            <input type="text" class="form-control" id="title" placeholder="Title..." required>
+            <label for="author">Your Name:</label>
+            <input type="text" class="form-control" id="author" placeholder="Author..." required>
+            <label for="content">Write your post here:</label>
+            <textarea id="content" class="form-control" placeholder="Content..." required></textarea>
+            <button id="add-post" type="submit" class="btn btn-primary post-button">Post</button>
+          </form>
+        </div>
+        <div id="blog"></div>
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
