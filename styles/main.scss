@@ -1,0 +1,155 @@
+// Variables
+// Colors
+$white: #fff;
+$light-grey: #f2f2f2;
+$grey: #95a5a6;
+$blue: #3498db;
+$turquoise: #1abc9c;
+
+// Fonts
+$open-sans: 'Open sans', sans-serif;
+$lobster: 'Lobster', cursive;
+
+// General
+body {
+    font-family: $open-sans;
+    background-color: #ecf0f1;
+}
+
+// Add post form
+.create-post {
+    border-bottom: 3px solid $blue;
+    background-color: $white;
+    padding: 10px 40px 15px 40px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    margin-top: 50px;
+    -webkit-box-shadow: 0px 11px 37px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 11px 37px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 11px 37px -13px rgba(0, 0, 0, 0.75);
+
+    h1 {
+        font-family: $lobster;
+        font-size: 60px;
+    }
+
+    input {
+        margin-bottom: 10px;
+    }
+
+    textarea {
+        width: 100%;
+        resize: none;
+        height: 80px;
+    }
+
+    .post-button {
+        float: right;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+// Post
+.post {
+    background: $white;
+    margin-top: 20px;
+    padding: 10px 40px 15px 40px;
+    border-radius: 10px;
+    margin-bottom: 45px;
+    border-bottom: 3px solid $turquoise;
+    -webkit-box-shadow: 0px 11px 37px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 11px 37px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 11px 37px -13px rgba(0, 0, 0, 0.75);
+
+    .post-title h2 {
+        font-weight: bold;
+    }
+
+    .post-author {
+        float: left;
+        font-style: italic;
+        color: $grey;
+    }
+
+    .post-date {
+        float: right;
+        font-style: italic;
+        color: $grey;
+    }
+
+    .post-content {
+        clear: both;
+        margin-top: 20px;
+    }
+
+    // Comments
+    .post-comments {
+        background: $white;
+        border-top:1px solid $light-grey;
+        margin-top:25px;
+
+        h4 {
+            font-weight: bold;
+        }
+
+        input, textarea, label {
+            display: block;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            resize: none;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .comment-add {
+            background-color: $turquoise;
+            color: $white;
+            font-weight: bold;
+            margin-top: 15px;
+            float: right;
+
+            &:hover, &:focus {
+                color: $white;
+                background: $turquoise;
+            }
+        }
+
+        .comments {
+            margin-bottom: 20px;
+
+            .comment {
+                border-left: 2px solid $turquoise;
+                border-bottom: 1px solid $light-grey;
+                background-color: $light-grey;
+                padding-left: 20px;
+                padding-bottom: 15px;
+                padding-top: 15px;
+                margin-bottom: 15px;
+
+                .comment-data {
+                    span {
+                        font-size: 12px;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+}
