@@ -1,5 +1,5 @@
 (function () {
-    let commentTemplate = require(__dirname + '../../templates/comment.hbs');
+    let commentTemplate = require(__dirname + './../../templates/comment.hbs');
 
     class PostComment {
         constructor(data) {

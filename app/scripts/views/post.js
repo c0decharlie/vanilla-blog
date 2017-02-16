@@ -1,5 +1,5 @@
 (function () {
-    let postTemplate = require(__dirname + '../../templates/post.hbs');
+    let postTemplate = require(__dirname + './../../templates/post.hbs');
     let postCommentForm = window.blog.views.PostCommentForm;
 
     class PostView {

@@ -1,5 +1,5 @@
 (function () {
-    let postCommentFormTemplate = require(__dirname + '/../../scripts/templates/add-comment-form.hbs');
+    let postCommentFormTemplate = require(__dirname + './../../templates/add-comment-form.hbs');
 
     class PostCommentForm {
         constructor(parent, data) {

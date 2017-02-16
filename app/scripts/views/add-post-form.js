@@ -1,5 +1,5 @@
 (function () {
-    let addPostFormTemplate = require(__dirname + '/../../scripts/templates/add-post-form.hbs');
+    let addPostFormTemplate = require(__dirname + './../../templates/add-post-form.hbs');
 
     class AddPostForm {
         constructor() {
