@@ -1,15 +1,11 @@
-(function () {
-    let helpers = new window.blog.utils.Helpers();
+import helpers from '../utils/helpers'
 
-    class CommentModel {
-        constructor(data) {
-            this.author = data.author;
-            this.content = data.content;
-            this.postId = data.postId;
-            this.date = helpers.getCurrentDate();
-            this.id = helpers.generateId();
-        }
+export default class CommentModel {
+    constructor(data) {
+        this.author = data.author;
+        this.content = data.content;
+        this.postId = data.postId;
+        this.date = helpers.getCurrentDate();
+        this.id = helpers.generateId();
     }
-
-    window.blog.models.CommentModel = CommentModel;
-}());
+}

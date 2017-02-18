@@ -1,50 +1,45 @@
-(function () {
-    let localService = window.blog.services.LocalService;
-    let postModel = window.blog.models.PostModel;
-    let postListModel = window.blog.models.PostListModel;
-    let commentModel = window.blog.models.CommentModel;
-    let addPostForm = window.blog.views.AddPostForm;
-    let postView = window.blog.views.PostView;
-    let postComment = window.blog.views.PostComment;
+import PostModel from '../models/post-model';
+import PostListModel from '../models/post-list-model';
+import CommentModel from '../models/comment-model';
+import AddPostForm from '../views/add-post-form';
+import PostView from '../views/post';
+import PostComment from '../views/post-comment';
 
-    class BlogController {
-        constructor() {
-            this.postForm = new addPostForm();
-            this.postList = new postListModel();
-            this.eventListeners();
-            this.onReady();
-        }
-
-        eventListeners() {
-            window.blog.runtime.on('formSent', (data) => {
-                let post = new postModel(data);
-                this.postList.addPost(post);
-                new postView(post);
-            });
-
-            window.blog.runtime.on('commentAdded', (data) => {
-                let comment = new commentModel(data);
-                this.postList.addComment(comment);
-                new postComment(comment);
-            });
-
-            window.blog.runtime.on('createdPostList', (posts) => {
-                posts.forEach( post => {
-                    new postView(post);
-                });
-            });
-
-            window.blog.runtime.on('createdCommentList', (comments) => {
-                comments.forEach( comment => {
-                    new postComment(comment);
-                });
-            });
-        }
-
-        onReady() {
-            this.postList.checkPosts();
-        }
+export default class BlogController {
+    constructor() {
+        this.postForm = new AddPostForm();
+        this.postList = new PostListModel();
+        this.eventListeners();
+        this.onReady();
     }
 
-    window.blog.controllers.BlogController = BlogController;
-}());
+    eventListeners() {
+        window.runtime.on('formSent', (data) => {
+            let post = new PostModel(data);
+            this.postList.addPost(post);
+            new PostView(post);
+        });
+
+        window.runtime.on('commentAdded', (data) => {
+            let comment = new CommentModel(data);
+            this.postList.addComment(comment);
+            new PostComment(comment);
+        });
+
+        window.runtime.on('createdPostList', (posts) => {
+            posts.forEach(post => {
+                new PostView(post);
+            });
+        });
+
+        window.runtime.on('createdCommentList', (comments) => {
+            comments.forEach(comment => {
+                new PostComment(comment);
+            });
+        });
+    }
+
+    onReady() {
+        this.postList.checkPosts();
+    }
+}

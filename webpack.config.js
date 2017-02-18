@@ -1,6 +1,3 @@
-const path = require('path');
-const webpack = require('webpack');
-
 module.exports = {
     context: __dirname,
     entry: './app/scripts/main.js',
@@ -9,7 +6,6 @@ module.exports = {
         filename: 'blog.js'
     },
     module: {
-
         loaders: [
             {
                 test: /\.hbs$/,
@@ -18,6 +14,14 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loader: 'style-loader!css-loader!sass-loader'
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015']
+                }
             }
         ]
     }
